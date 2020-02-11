@@ -1,0 +1,93 @@
+package calculator;
+import java.util.Scanner;
+
+public class calc {
+
+	public static void main(String[] args)
+	{
+		//int num1 = 0;
+//		int num2 = 0;
+		
+		Scanner in = new Scanner(System.in);
+		
+		System.out.print("Please enter your first integer: ");
+		String num1 = in.nextLine();
+		
+		System.out.print("Please enter the second integer: ");
+		String num2 = in.nextLine();
+		
+		System.out.print("Please choose an operator: (+,-,*,/) : ");
+		String operator = in.nextLine();
+		
+		double result = 0;
+		
+//		try {
+//            switch (operator) {
+//                case "+":
+//                    result = addition(num1, num2);
+//                    break;
+//                case "-":
+//                    result = subtraction(num1, num2);
+//                    break;
+//                case "*":
+//                    result = multiplication(num1, num2);
+//                    break;
+//                case "/":
+//                    result = division(num1, num2);
+//                    break;
+//                default:
+//                    System.out.println("There is NO such operation! Please choose between the 4!");
+//                    break;
+//            }
+//            System.out.println("The result is: " + result);
+//        } catch (Exception e) {
+//            System.out.println("Number formatting exception " + e.getMessage());
+//        }
+		
+		
+		if (operator.compareTo("+") == 0)
+			{
+			System.out.print(addition(num1, num2));
+			}
+		else if (operator.compareTo("-") == 0)
+			{
+			System.out.print(subtraction(num1,num2));
+			}
+		else if (operator.compareTo("*") == 0)
+			{
+			System.out.print(multiplication(num1,num2));
+			}
+		else if (operator.compareTo("/") == 0)
+			{
+			System.out.print(division(num1,num2));
+			}
+		else {
+			System.out.print(operator);
+		}
+	}
+		
+	public static double addition(String digit, String digit2)
+	{
+		double addition = Double.parseDouble(digit) + Double.parseDouble(digit2);
+		return addition;
+	}
+	
+	public static double subtraction(String digit, String digit2)
+	{
+		double subtraction = Double.parseDouble(digit) - Double.parseDouble(digit2);
+		return subtraction;
+	}
+	
+	public static double multiplication(String digit, String digit2)
+	{
+		double multiplication = Double.parseDouble(digit) * Double.parseDouble(digit2);
+		return multiplication;
+	}
+	
+	public static double division(String digit, String digit2)
+	{
+		double division = Double.parseDouble(digit) / Double.parseDouble(digit2);
+		return division;
+	}
+
+}
